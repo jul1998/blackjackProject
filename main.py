@@ -2,16 +2,12 @@ import random
 
 #Create lists for compuer and pc cards
 
-
-
 def dealCards ():
     cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
     
     card = random.choice(cards)
     return card
     
-
-
 
 def detectBlackJack(cards):
     if sum(cards) == 21 and len(cards) == 2:
@@ -23,7 +19,6 @@ def detectBlackJack(cards):
 def score(cards):
     score = sum(cards)
     return score
-
 
 
 def ifAceDrawn(cards):
@@ -40,22 +35,18 @@ def add_cards(cards):
     cards.append(dealCards())
 
 
-
-
-
-
-
-
 def user_get_cards(cards):
         
         add_cards(cards)
         return cards
 
+    
 def computer_get_cards(cards):
     while score(cards) < 16:
         print("Computer's turn")
         add_cards(cards)
     return cards
+
 
 def compare(user_score, computer_score):
     if score(user_score) == score(computer_score):
@@ -88,7 +79,6 @@ def game():
                 user_cards.append(dealCards())
                 computer_cards.append(dealCards())
                 
-
 
             if detectBlackJack(computer_cards) or  detectBlackJack(user_cards):
                 print("BlackJack")
